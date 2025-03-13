@@ -28,7 +28,9 @@ The **Spectrum Kernel** compares the occurrences of substrings (k-mers) of lengt
 
 Given two sequences \( x \) and \( y \), and let \( \phi_k(x) \) be a vector of dimension \( 4^k \) representing the occurrences of all \( k \)-mers in \( x \). The kernel is defined as:
 
-\[ K_{\text{spectrum}}(x, y) = \sum_{v \in \Sigma^k} \phi_k(x)_v \cdot \phi_k(y)_v \]
+$$
+K_{\text{spectrum}}(x, y) = \sum_{v \in \Sigma^k} \phi_k(x)_v \cdot \phi_k(y)_v
+$$
 
 where \( \Sigma \) is the DNA alphabet (\{A, C, G, T\}).
 
@@ -40,7 +42,9 @@ The **Mismatch Kernel** is an extension of the Spectrum Kernel that tolerates a 
 
 Let \( \phi_{k,m}(x) \) be a vector representing the occurrences of \( k \)-mers with up to \( m \) errors. The kernel is defined as:
 
-\[ K_{\text{mismatch}}(x, y) = \sum_{v \in \Sigma^k} \sum_{w \in \mathcal{N}_m(v)} \phi_k(x)_w \cdot \phi_k(y)_w \]
+$$
+K_{\text{mismatch}}(x, y) = \sum_{v \in \Sigma^k} \sum_{w \in \mathcal{N}_m(v)} \phi_k(x)_w \cdot \phi_k(y)_w
+$$
 
 where \( \mathcal{N}_m(v) \) is the set of \( k \)-mers that differ from \( v \) by at most \( m \) substitutions.
 
@@ -52,7 +56,9 @@ The **Local Alignment Kernel** measures the similarity between two sequences bas
 
 It relies on an affinity function \( S(x, y) \) calculated by:
 
-\[ K_{\text{LA}}(x, y) = \sum_{\text{alignments } A} e^{\lambda S(A)} \]
+$$
+K_{\text{LA}}(x, y) = \sum_{\text{alignments } A} e^{\lambda S(A)}
+$$
 
 where \( S(A) \) is the local alignment score between \( x \) and \( y \), and \( \lambda \) is a control parameter.
 
