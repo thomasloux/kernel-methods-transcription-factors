@@ -190,4 +190,4 @@ for i in range(nb_tr_to_fit):
 # concat
 df_test_final = pd.concat(df_test)
 df_test_final["Bound"] = df_test_final["Bound"].astype(int)
-df_test_final[["Id", "Bound"]].to_csv("predictions/Yte_svm_mismatchkernel.csv", index=False)
+df_test_final[["Id", "Bound"]].to_csv("Yte.csv", index=False)
